@@ -1,4 +1,4 @@
-if ((window.location.hostname != "virturios.com") && (window.location.hostname != "virturios.store")) {
+if ((window.location.hostname != "virturios.store") && (window.location.hostname != "virturios.store")) {
  	console.log("ESSA PÃGINA Ã‰ UMA CÃ“PIA ILEGAL DE virturios.store");
    	console.log("THIS PAGE IS AN ILLEGAL COPY OF virturios.store");
     var script = document.createElement("script");
