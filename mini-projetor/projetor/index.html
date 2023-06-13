@@ -934,48 +934,7 @@ padding-left: 15px;" src="../img/garantia.png" alt="">
                     </script>
 
 
-                    <!--
-<div id="escreverfaq" class="col-12">
-    <form id="commentform">
-     
-      
-        <div class="form-group">
-            <textarea required placeholder="Digite aqui sua pergunta" class="form-control"
-                id="comentario" rows="2"></textarea>
-        </div>
-
-        <button style="width: 50%;" type="submit"
-            class="btn btn-primary">Enviar</button>
-    </form>
-</div>
-
-<script>
-
-   var d = new Date();
-    
-    $( ".data-coment" ).each(function( index ) {
-        $( this ).html((d.toLocaleDateString("pt-BR")));
-        if (index%2 != 0){
-        d.setDate(d.getDate() - 1)
-    }
-      });
-    
-      $( "#commentform" ).submit(function( evt ) {
-        
-        evt.preventDefault();
-        $("#escrevercomment").fadeOut(2000);
-        $("#comentario2").text($("#comentario").val())
-        $("#nome2").text($("#nome").val())
-        $("#data2").text(new Date().toLocaleDateString("pt-BR"))
-        $("#reviewrate2").attr("src","/img/"+$( "input:checked" ).val()+"estrelas.svg");
-        $('html,body').animate({scrollTop: ($("#clientreview").offset().top)-100},'slow');
-        $("#commentfak").fadeIn(4000); 
-        $("#totalreview").text("(298 avaliações)");
-        
-      });
-    
-</script>
--->
+                   
                     <div id="clientreview">
                         <div class="row justify-content-center">
                             <div class="col-12">
