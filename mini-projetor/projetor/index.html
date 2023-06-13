@@ -15,40 +15,45 @@
     <script src="../paginadevendas.js"></script>
     <script>require('initialize');</script>
     <link rel="stylesheet" href="../plugins/css/swiper-bundle.css">
- 
+
     <link href="https://fonts.cdnfonts.com/css/montserrat" rel="stylesheet">
     <script src="https://kit.fontawesome.com/8c3055bf92.js" crossorigin="anonymous"></script><!-- Meta Pixel Code -->
-<script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '596794855797740');
-    fbq('track', 'PageView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=596794855797740&ev=PageView&noscript=1"
-  /></noscript>
-  <!-- End Meta Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '596794855797740');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=596794855797740&ev=PageView&noscript=1" /></noscript>
+    <!-- End Meta Pixel Code -->
 
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-5Q3P3HM');</script>
-    <!-- End Google Tag Manager -->  
-   
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-5Q3P3HM');</script>
+    <!-- End Google Tag Manager -->
+
 </head>
 
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5Q3P3HM"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5Q3P3HM" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
     <div style="background-color: #ffec54!important">
@@ -81,16 +86,145 @@
                         <div class="swiper-slide">
                             <img src="../img/H69603260d2184ca18a1a36d383956808m-1.jpg">
                         </div>
+
+                        <!-- Next and previous buttons -->
+                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                        <br>
+
+                        <!-- The dots/circles -->
+                        <div style="text-align:center">
+                            <span class="dot" onclick="currentSlide(1)"></span>
+                            <span class="dot" onclick="currentSlide(2)"></span>
+                            <span class="dot" onclick="currentSlide(3)"></span>
+                        </div>
                     </div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-                    <!-- Add Pagination -->
-                    <div class="swiper-pagination"></div>
                 </div>
             </div>
-            <style>
-                @import url('https://fonts.cdnfonts.com/css/montserrat');
-            </style>
+<style>
+    * {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+</style>
+            <script>
+                let slideIndex = 1;
+                showSlides(slideIndex);
+
+                // Next/previous controls
+                function plusSlides(n) {
+                    showSlides(slideIndex += n);
+                }
+
+                // Thumbnail image controls
+                function currentSlide(n) {
+                    showSlides(slideIndex = n);
+                }
+
+                function showSlides(n) {
+                    let i;
+                    let slides = document.getElementsByClassName("swiper-slide");
+                    let dots = document.getElementsByClassName("dot");
+                    if (n > slides.length) { slideIndex = 1 }
+                    if (n < 1) { slideIndex = slides.length }
+                    for (i = 0; i < slides.length; i++) {
+                        slides[i].style.display = "none";
+                    }
+                    for (i = 0; i < dots.length; i++) {
+                        dots[i].className = dots[i].className.replace(" active", "");
+                    }
+                    slides[slideIndex - 1].style.display = "block";
+                    dots[slideIndex - 1].className += " active";
+                } 
+            </script>
+
+
+
+
             <style>
                 .novo {
 
@@ -179,12 +313,7 @@
                                         <i aria-hidden="true" class="fas fa-dot-circle"></i> </span>
                                     <span class="elementor-icon-list-text">Melhor Custo benefício do mercado</span>
                                 </li>
-                                <li class="elementor-icon-list-item">
-                                    <span class="elementor-icon-list-icon">
-                                        <i aria-hidden="true" class="fas fa-dot-circle"></i> </span>
-                                    <span class="elementor-icon-list-text">Praticidade para levar onde você
-                                        quiser</span>
-                                </li>
+
                                 <li class="elementor-icon-list-item">
                                     <span class="elementor-icon-list-icon">
                                         <i aria-hidden="true" class="fas fa-dot-circle"></i> </span>
@@ -386,21 +515,27 @@
 
                     </p>
 
-<center>
+                    <center>
                         <img src="https://virturios.store/mini-projetor/assets/garantia.png">
-                    </center><h1 class="h1-sam">
+                    </center>
+                    <h1 class="h1-sam">
 
-                       GARANTIA INCONDICIONAL
+                        GARANTIA INCONDICIONAL
                     </h1>
                     <h2 class="h2-sam">
 
-Receba o que está esperando ou seu dinheiro de volta!                    </h2>
+                        Receba o que está esperando ou seu dinheiro de volta! </h2>
                     <p class="p-sam">
 
-O MINI YG300 PRO® vem com garantia incondicional.<br> <br>Se ele não fizer tudo o que foi prometido ou apresentar qualquer defeito dentro de 12 meses você pode enviar um email para contato@virturios.com que nós te devolvemos todo o seu dinheiro, sem perguntas ou questionamentos!<br> <br>Esse é o tamanho da nossa confiança no MINI YG300 PRO® .<br><br>
-Nós sabemos que ele funciona de maneira excepcional, e que ele realmente vai te surpreender. <br><br>
-Então, <b>clique abaixo e solicite o seu.</b>
-<br><br>
+                        O MINI YG300 PRO® vem com garantia incondicional.<br> <br>Se ele não fizer tudo o que foi
+                        prometido
+                        ou apresentar qualquer defeito dentro de 12 meses você pode enviar um email para
+                        contato@virturios.com que nós te devolvemos todo o seu dinheiro, sem perguntas ou
+                        questionamentos!<br> <br>Esse é o tamanho da nossa confiança no MINI YG300 PRO® .<br><br>
+                        Nós sabemos que ele funciona de maneira excepcional, e que ele realmente vai te surpreender.
+                        <br><br>
+                        Então, <b>clique abaixo e solicite o seu.</b>
+                        <br><br>
                     </p>
 
 
@@ -431,18 +566,18 @@ Então, <b>clique abaixo e solicite o seu.</b>
                                 style="line-height:65px;margin-bottom:0px;font-family:'Samsung Sharp Sans Medium';font-size: 60px;font-weight: bold;">
                                 <span style="font-size:25px;font-weight: normal; color: #5b5b5b;">12X</span> R$39,90
 
-                            <a href="https://seguro.virturios.com/r/AYOV2Y0Z9V">
-                                <div style="margin-top:20px;border-radius:5px;max-width: 350px; background: #3483fa; padding: 10px; margin-bottom: 6px;"
-                                    class="text-center">
+                                <a href="https://seguro.virturios.com/r/AYOV2Y0Z9V">
+                                    <div style="margin-top:20px;border-radius:5px;max-width: 350px; background: #3483fa; padding: 10px; margin-bottom: 6px;"
+                                        class="text-center">
 
-                                    <p style="color: #fff; margin-bottom: 0px; font-weight: bold;"
-                                        class="comprar-botao">
-                                        <i style="float: left;color: #ffffff;  padding-left: 5%; padding-top: 2%;"
-                                            class="fas fa-shopping-cart"></i>COMPRAR
-                                    </p>
-                                </div><br>
-                                <img src="../img/buy.png" height="100%">
-                            </a>
+                                        <p style="color: #fff; margin-bottom: 0px; font-weight: bold;"
+                                            class="comprar-botao">
+                                            <i style="float: left;color: #ffffff;  padding-left: 5%; padding-top: 2%;"
+                                                class="fas fa-shopping-cart"></i>COMPRAR
+                                        </p>
+                                    </div><br>
+                                    <img src="../img/buy.png" height="100%">
+                                </a>
                     </div>
                     <style>
                         .faq-button {
@@ -710,7 +845,7 @@ padding-left: 15px;" src="../img/garantia.png" alt="">
                         </script>
 
 
-                        
+
                     </div>
                     <hr>
                     <style>
@@ -791,7 +926,7 @@ padding-left: 15px;" src="../img/garantia.png" alt="">
                     </script>
 
 
-<!--
+                    <!--
 <div id="escreverfaq" class="col-12">
     <form id="commentform">
      
@@ -1032,7 +1167,9 @@ padding-left: 15px;" src="../img/garantia.png" alt="">
                                         <p class="mb-0 font-weight-bold">Rosane Mendes</p>
                                         <span class="data-coment"></span>
                                         <img src="../img/5estrelas-1.png" alt="">
-                                        <p class="client-coment">Muito bom, transformei a parede da minha sala em um cinema, top! 
+                                        <p class="client-coment">Muito bom, transformei a parede da minha sala em um
+                                            cinema,
+                                            top!
                                         </p>
 
                                     </div>
@@ -1061,7 +1198,9 @@ padding-left: 15px;" src="../img/garantia.png" alt="">
                                         <p class="mb-0 font-weight-bold">Jorge Alves</p>
                                         <span class="data-coment"></span>
                                         <img src="../img/5estrelas-1.png" alt="">
-                                        <p class="client-coment">Gostei demais, muito bom para reproduzir vídeos e jogos, obg 
+                                        <p class="client-coment">Gostei demais, muito bom para reproduzir vídeos e
+                                            jogos,
+                                            obg
                                         </p>
                                         <hr>
                                     </div>
@@ -1071,7 +1210,9 @@ padding-left: 15px;" src="../img/garantia.png" alt="">
                                         <span class="data-coment"></span>
                                         <img src="../img/5estrelas-1.png" alt="">
                                         <p class="client-coment">
-                                            Muito boa a projeção, funciona muito bem até com certa luminosidade no ambiente, em locais escuros é ótimo! 😊
+                                            Muito boa a projeção, funciona muito bem até com certa luminosidade no
+                                            ambiente,
+                                            em locais escuros é ótimo! 😊
                                         </p>
                                         <hr>
                                     </div>
@@ -1131,90 +1272,94 @@ padding-left: 15px;" src="../img/garantia.png" alt="">
                 </div>
 
             </div>
-            </div>
-            <section id="rodape" >
-	<div  style="background: #ffffff; margin-top: 15px;">
-
-    <div class="container"  >
-        <br>        <br>
-
-      <div class="row text-left" style="margin-top: 15px;">
-        <div class="col-lg-4 mb-3" style="margin-top: 15px;">
-          <img src="https://virturios.store/mini-projetor/img/logo-projetor.png" width="80%" alt="">
-          <br>
-           <br>
-          
-          <h8 style=" color: #000000; font-size: 14px;"> © Copyright 2020 - Virturios</h8>
-           <br>
-         <br> <h8 style=" color: #000000;font-size: 14px;" >
-             <b>  Duvidas? Fale Conosco!</b>  
-            </h8>  <br> <br>
-            <h8 style=" color: #000000;font-size: 14px;" >
-             Horário de Atendimento:
-            </h8>  <br>
-                <h8 style=" color: #000000;font-size: 14px;" >
-            
-             Segunda à Sexta: 09:00h às 18:00h
-            </h8>  <br>
-             <h8 style=" color: #000000; font-size: 14px;"> Email: contato@virturios.com </h8> <br>
-               <h8 style=" color: #000000; font-size: 14px;"> CNPJ: 37.397.957-0001/69 </h8>
-          </div>
-        <div class="col-lg-3 mb-3" style="margin-top: 25px;">
-          <p   style=" color: #000000;"><b>LINKS ÚTEIS</b></p><br>
-           
-           
-          <a href="https://virturios.com/atendimento/politicas-de-privacidade-e-termos">
-            <p  style=" color: #000000;font-size: 16px;" >Termos de Serviço</p>
-          </a>
-          
-            <a href="https://virturios.com/atendimento/politicas-de-envio-e-entrega">
-            <p  style=" color: #000000;font-size: 16px;">Políticas de Envio</p>
-          </a>
-     <a href="https://virturios.com/atendimento/direito-de-arrependimento-e-troca">
-            <p  style=" color: #000000;font-size: 16px;">Troca e Garantia</p>
-          </a>
-           <a href="https://virturios.com/atendimento/rastreamento">
-            <p  style=" color: #000000;font-size: 16px;">Rastreamento</p>
-          </a>
-        <br>
-           <br>
-       </div>
-        <div class="col-lg-5 " style="margin-top: 25px;">
-   
-            <img src="assets/cards.png" class="center" size="30%" alt="">
-   <br><center> <img src="assets/selos3.png" class="center"  alt=""></center> 
-  <br></div>   </div>
-  </section>
-           
-           
-           
-           
-            <style type="text/css">
-                #mobileshow {
-                    display: none;
-                }
-
-                @media screen and (max-width: 600px) {
-                    #mobileshow {
-                        display: block;
-                    }
-                }
-            </style>
-            <style>
-                .bottomFixButtionComponent {
-                    position: sticky;
-                    bottom: 0px;
-                    padding-top: 0px;
-                    background: #00aa00;
-                    width: 100%;
-                    height: 50px;
-                    display: flex;
-                    justify-content: space-around;
-                    align-items: center;
-                    border-radius: 5px !important;
-                }
-            </style>
         </div>
+        <section id="rodape">
+            <div style="background: #ffffff; margin-top: 15px;">
+
+                <div class="container">
+                    <br> <br>
+
+                    <div class="row text-left" style="margin-top: 15px;">
+                        <div class="col-lg-4 mb-3" style="margin-top: 15px;">
+                            <img src="https://virturios.store/mini-projetor/img/logo-projetor.png" width="80%" alt="">
+                            <br>
+                            <br>
+
+                            <h8 style=" color: #000000; font-size: 14px;"> © Copyright 2020 - Virturios</h8>
+                            <br>
+                            <br>
+                            <h8 style=" color: #000000;font-size: 14px;">
+                                <b> Duvidas? Fale Conosco!</b>
+                            </h8> <br> <br>
+                            <h8 style=" color: #000000;font-size: 14px;">
+                                Horário de Atendimento:
+                            </h8> <br>
+                            <h8 style=" color: #000000;font-size: 14px;">
+
+                                Segunda à Sexta: 09:00h às 18:00h
+                            </h8> <br>
+                            <h8 style=" color: #000000; font-size: 14px;"> Email: contato@virturios.com </h8> <br>
+                            <h8 style=" color: #000000; font-size: 14px;"> CNPJ: 37.397.957-0001/69 </h8>
+                        </div>
+                        <div class="col-lg-3 mb-3" style="margin-top: 25px;">
+                            <p style=" color: #000000;"><b>LINKS ÚTEIS</b></p><br>
+
+
+                            <a href="https://virturios.com/atendimento/politicas-de-privacidade-e-termos">
+                                <p style=" color: #000000;font-size: 16px;">Termos de Serviço</p>
+                            </a>
+
+                            <a href="https://virturios.com/atendimento/politicas-de-envio-e-entrega">
+                                <p style=" color: #000000;font-size: 16px;">Políticas de Envio</p>
+                            </a>
+                            <a href="https://virturios.com/atendimento/direito-de-arrependimento-e-troca">
+                                <p style=" color: #000000;font-size: 16px;">Troca e Garantia</p>
+                            </a>
+                            <a href="https://virturios.com/atendimento/rastreamento">
+                                <p style=" color: #000000;font-size: 16px;">Rastreamento</p>
+                            </a>
+                            <br>
+                            <br>
+                        </div>
+                        <div class="col-lg-5 " style="margin-top: 25px;">
+
+                            <img src="assets/cards.png" class="center" size="30%" alt="">
+                            <br>
+                            <center> <img src="assets/selos3.png" class="center" alt=""></center>
+                            <br>
+                        </div>
+                    </div>
+        </section>
+
+
+
+
+        <style type="text/css">
+            #mobileshow {
+                display: none;
+            }
+
+            @media screen and (max-width: 600px) {
+                #mobileshow {
+                    display: block;
+                }
+            }
+        </style>
+        <style>
+            .bottomFixButtionComponent {
+                position: sticky;
+                bottom: 0px;
+                padding-top: 0px;
+                background: #00aa00;
+                width: 100%;
+                height: 50px;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                border-radius: 5px !important;
+            }
+        </style>
+    </div>
     </div>
     </div>
     <div id="mobileshow" class="bottomFixButtionComponent"> <a href="https://seguro.virturios.com/r/AYOV2Y0Z9V"><b>
