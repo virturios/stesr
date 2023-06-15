@@ -10,8 +10,7 @@
 
     <link rel="icon" type="image/x-icon" href="assets/favicone.ico" />
  <script src="https://virturios.store/mini-projetor/projetor-adv/noticia/newadvertorial.js"></script>
-    <script src="https://virturios.store/mini-projetor/app.js"></script>
-    <script src="https://virturios.store/mini-projetor/paginadevendas.js"></script>
+   
     <link rel="stylesheet" href="https://virturios.store/mini-projetor/plugins/css/swiper-bundle.css">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-269934717-1"></script>
@@ -385,7 +384,8 @@
                         <p style="font-size:14px; margin: 0px; overflow:auto; display:block;" class="custom-address">
 
                         </p>
-
+<p id="your-element-id">id
+                        </p>
                         <div style="float: left;clear:both;margin-right: 10px;">
                             <svg xmlns="http://www.w3.org/2000/svg" width="38" height="32" viewBox="0 0 38 32"
                                 fill="none">
@@ -410,7 +410,147 @@
                         }
                     </style>
                 </div>
+<script>
+    // Substitua 'YOUR_ACCESS_KEY' pelo seu acesso chave do ipapi
+const accessKey = 'ebafa3b271120a0f81d2778b9d80f508';
 
+// Função para obter a geolocalização com base no IP
+async function fetchGeolocation() {
+  try {
+    const response = await fetch(`https://api.ipapi.com/check?access_key=${accessKey}`);
+    const data = await response.json();
+    return data.city;
+  } catch (error) {
+    console.error('Erro ao obter geolocalização:', error);
+    return null;
+  }
+}
+
+// Função para alterar a classe com base na cidade
+function changeClassByCity(city) {
+  const element = document.getElementById('your-element-id'); // Substitua pelo ID do elemento desejado
+
+  if (city === 'New York') {
+    element.classList.add('new-york-class');
+  } else if (city === 'London') {
+    element.classList.add('london-class');
+  } else {
+    // Classe padrão se a cidade não for Nova York ou Londres
+    element.classList.add('default-class');
+  }
+}
+
+// Função para manipular o evento onload da janela
+function handleWindowLoad() {
+  fetchGeolocation()
+    .then(city => {
+      if (city) {
+        changeClassByCity(city);
+      }
+    })
+    .catch(error => {
+      console.error(error);
+    });
+}
+
+// Registrar o evento onload da janela
+window.onload = handleWindowLoad;
+
+
+window.addEventListener('load', function () {
+    $(".headerdesconto").fadeTo(2000,1);
+
+    
+    x = $("#vimeoplayer").attr("data-id");
+    $("#vimeoplayer").attr("src","https://player.vimeo.com/video/"+x);
+
+    var d = new Date();
+    
+    $( ".data-coment" ).each(function( index ) {
+        $( this ).html((d.toLocaleDateString("pt-BR")));
+        if (index%2 != 0){
+        d.setDate(d.getDate() - 1)
+    }
+      });
+    
+      $( "#commentform" ).submit(function( evt ) {
+        
+        evt.preventDefault();
+        $("#escrevercomment").fadeOut(2000);
+        $("#comentario2").text($("#comentario").val())
+        $("#nome2").text($("#nome").val())
+        $("#data2").text(new Date().toLocaleDateString("pt-BR"))
+        $("#reviewrate2").attr("src","/img/"+$( "input:checked" ).val()+"estrelas.svg");
+        $('html,body').animate({scrollTop: ($("#clientreview").offset().top)-100},'slow');
+        $("#commentfak").fadeIn(4000); 
+        $("#totalreview").text("(298 avaliações)");
+        
+      });
+    
+     
+
+
+    
+
+   
+
+    function convertDate(e) {
+      var t,
+          o = new Date(e);
+      return [((t = o.getDate()), t < 10 ? "0" + t : t)].join("/");
+  }
+
+    function getMesExtenso(e) {
+      var t = new Array(12);
+      return (
+          (t[0] = "janeiro"),
+          (t[1] = "fevereiro"),
+          (t[2] = "março"),
+          (t[3] = "abril"),
+          (t[4] = "maio"),
+          (t[5] = "junho"),
+          (t[6] = "julho"),
+          (t[7] = "agosto"),
+          (t[8] = "setembro"),
+          (t[9] = "outubro"),
+          (t[10] = "novembro"),
+          (t[11] = "dezembro"),
+          t[e]
+      );
+  }
+
+
+
+    jQuery(document).ready(function (e) {
+      var t = new Date();
+        g = t.setDate(t.getDate());
+        o = t.setDate(t.getDate() - 15);
+        n = t.setDate(t.getDate() + 10 + 15);
+        r = getMesExtenso(t.getMonth());
+        var dataarrumada = convertDate(new Date()) + " de " + r;
+        if (convertDate(o) > convertDate(n)) var a = "<strong>" + convertDate(n) + "</strong> e <strong>" + convertDate(o) + " de " + r + "</strong>";
+        else {
+            if (null == (s = getMesExtenso(t.getMonth() + 1))) var s = getMesExtenso(t.getMonth() - 11);
+            a = "<strong>" + convertDate(n) + " de " + r + "</strong> e <strong>" + convertDate(o) + " de " + s + "</strong>";
+        }
+      e.getJSON("https://wtfismyip.com/json", function (t) {
+          var o = (t = t.YourFuckingLocation).replace(", Brazil", "");
+          var posicao = o.indexOf(",");
+          var tratado = o.substring(0, posicao);
+          e(".custom-address").html("<font color='#00A650'>via <b>Correios</b></font> <font color='#00A650'> para </font> <strong><font color='#00A650'>" + o + " e Região</font></strong>"),
+        e(".shipping-estimated").html("<font color='#00A650'>Chegará grátis entre " + a + ".</font>"),
+        e(".shipping-estimated2").html("<font color='#00A650'>Chegará <b>grátis</b> entre " + a + ".</font>"),
+
+        e(".shipping-preview-loading").addClass("d-none"),
+          e(".cidade").html(tratado),
+              e(".cidaderegiao1").html(o),
+              e(".cidaderegiao").html(o + " e região");  
+             
+      });
+  });
+
+})
+                </script>
                 <div class="col-12">
 
 
