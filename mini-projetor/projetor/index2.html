@@ -9,7 +9,6 @@
     <!-- Favicon-->
 
     <link rel="icon" type="image/x-icon" href="assets/favicone.ico" />
- <script src="https://virturios.store/mini-projetor/projetor-adv/noticia/newadvertorial.js"></script>
    
     <link rel="stylesheet" href="https://virturios.store/mini-projetor/plugins/css/swiper-bundle.css">
 <!-- Google tag (gtag.js) -->
@@ -411,52 +410,6 @@
                     </style>
                 </div>
 <script>
-    // Substitua 'YOUR_ACCESS_KEY' pelo seu acesso chave do ipapi
-const accessKey = 'ebafa3b271120a0f81d2778b9d80f508';
-
-// Função para obter a geolocalização com base no IP
-async function fetchGeolocation() {
-  try {
-    const response = await fetch(`https://api.ipapi.com/check?access_key=${accessKey}`);
-    const data = await response.json();
-    return data.city;
-  } catch (error) {
-    console.error('Erro ao obter geolocalização:', error);
-    return null;
-  }
-}
-
-// Função para alterar a classe com base na cidade
-function changeClassByCity(city) {
-  const element = document.getElementById('your-element-id'); // Substitua pelo ID do elemento desejado
-
-  if (city === 'New York') {
-    element.classList.add('new-york-class');
-  } else if (city === 'London') {
-    element.classList.add('london-class');
-  } else {
-    // Classe padrão se a cidade não for Nova York ou Londres
-    element.classList.add('default-class');
-  }
-}
-
-// Função para manipular o evento onload da janela
-function handleWindowLoad() {
-  fetchGeolocation()
-    .then(city => {
-      if (city) {
-        changeClassByCity(city);
-      }
-    })
-    .catch(error => {
-      console.error(error);
-    });
-}
-
-// Registrar o evento onload da janela
-window.onload = handleWindowLoad;
-
-
 window.addEventListener('load', function () {
     $(".headerdesconto").fadeTo(2000,1);
 
