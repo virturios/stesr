@@ -16,10 +16,6 @@ window.addEventListener('load', function () {
       });
 
    });
-   $(window).trigger('scroll');
-   xurl = window.location.href;
-   xurl = xurl.replace(/https?:\/\//i, "");
-   var shareurl = "https://www.facebook.com/sharer/sharer.php?u=" + xurl;
 
 
    $(".texto-comentario").each(function () {
