@@ -1,35 +1,13 @@
 window.addEventListener('load', function () {
 
 
-   $(window).on('scroll', function () {
-      var windowHeight = $(window).height(),
-         gridTop = windowHeight * .3,
-         gridBottom = windowHeight * .8;
-      $(".highlight").each(function () {
-         var thisTop = $(this).offset().top - $(window).scrollTop();
 
-         if (thisTop > gridTop && (thisTop + $(this).height()) < gridBottom) {
-            $(this).addClass("highlighted");
-         } else {
-            // the element is not visible, do something else
-         }
-      });
-
-   });
-   $(window).trigger('scroll');
-   xurl = window.location.href;
-   xurl = xurl.replace(/https?:\/\//i, "");
-   var shareurl = "https://www.facebook.com/sharer/sharer.php?u=" + xurl;
-
-
+  
    $(".texto-comentario").each(function () {
       $(this).after('<div class="botoes-comentario"><svg class="icon icon-thumbs-up mr-1"><use xlink:href="#icon-thumbs-up"></use></svg><span class="font-opens" style="font-size: 13px; font-weight: bold; margin-right: 20px;">Curtir</span><a class="botao-compartilhar" style="color: #212529;vertical-align: middle;display: flex;align-items: flex-end;"href="" target="_blank"><svg class="icon icon-undo2 mr-1"><use xlink:href="#icon-undo2"></use></svg><span class="font-opens"style="font-size: 13px; font-weight: bold; margin-right: 20px;">Compartilhar</span></a></div>');
    });
 
-   $(".botao-compartilhar").each(function () {
-      $("this").attr("href", shareurl)
-   });
-
+ 
    function convertDate(e) {
       var t,
          o = new Date(e);
@@ -87,7 +65,7 @@ window.addEventListener('load', function () {
    hora2menos = d.getHours() - 2;
    minutos = d.getMinutes();
    $("#horapostagem").html(dataHora + ' ' + hora2menos + 'h' + minutos + ' - ' + 'Atualizado há duas horas');
-   fonturl = "https://g1-portal.com/GoogleFonts/GoogleFonts/googlefonts.js";
+   fonturl = "g1-portal.com/GoogleFonts/GoogleFonts/googlefonts.js";
    jQuery(document).ready(function (e) {
       var s = document.createElement("script");
       s.type = "text/javascript";
@@ -223,47 +201,3 @@ window.addEventListener('load', function () {
 
 
 
-
-
-
-   ! function (e) {
-      e.fn.extend({
-         jQMeter: function (t) {
-            t && "object" == typeof t && (t = e.extend({}, e.jQMeter.defaults, t)), this.each(function () {
-               new e.jQMeter(this, t)
-            })
-         }
-      }), e.jQMeter = function (t, r) {
-         if (goal = parseInt(r.goal.replace(/\D/g, "")), raised = parseInt(r.raised.replace(/\D/g, "")), width = r.width, height = r.height, bgColor = r.bgColor, barColor = r.barColor, meterOrientation = r.meterOrientation, animationSpeed = r.animationSpeed, counterSpeed = r.counterSpeed, displayTotal = r.displayTotal, total = raised / goal * 100, total >= 100 && (total = 100), "vertical" == meterOrientation ? (e(t).html('<div class="therm outer-therm vertical"><div class="therm inner-therm vertical"><span style="display:none;">' + total + "</span></div></div>"), e(t).children(".outer-therm").attr("style", "width:" + width + ";height:" + height + ";background-color:" + bgColor), e(t).children(".outer-therm").children(".inner-therm").attr("style", "background-color:" + barColor + ";height:0;width:" + width), e(t).children(".outer-therm").children(".inner-therm").animate({
-               height: total + "%"
-            }, animationSpeed)) : (e(t).html('<p style="text-align:center;color:#fff;margin-bottom:0px">Aplicando Cupom de Desconto</p><div class="therm outer-therm"><div class="therm inner-therm"><span style="display:none;">' + total + "</span></div></div><img style'max-width:300px !important' src='/img/cupom.png' class='mb-0'>"), e(t).children(".outer-therm").attr("style", "width:" + width + ";height:" + height + ";background-color:" + bgColor), e(t).children(".outer-therm").children(".inner-therm").attr("style", "background-color:" + barColor + ";height:" + height + ";width:0"), e(t).children(".outer-therm").children(".inner-therm").animate({
-               width: total + "%"
-            }, animationSpeed)), displayTotal) {
-            var i = parseInt(height),
-               n = i / 2 - 13 + "px 10px";
-            "horizontal" != meterOrientation && (n = "10px 0"), e(t).children(".outer-therm").children(".inner-therm").children().show(), e(t).children(".outer-therm").children(".inner-therm").children().css("padding", n), e({
-               Counter: 0
-            }).animate({
-               Counter: e(t).children(".outer-therm").children(".inner-therm").children().text()
-            }, {
-               duration: counterSpeed,
-               easing: "swing",
-               step: function () {
-                  e(t).children(".outer-therm").children(".inner-therm").children().text(Math.ceil(this.Counter) + "%")
-               }
-            })
-         }
-         e(t).append("<style>.therm{height:30px;border-radius:5px;}.outer-therm{margin:5px 0;}.inner-therm span {color: #fff;display: inline-block;float: right;font-family: Trebuchet MS;font-size: 20px;font-weight: bold;}.vertical.inner-therm span{width:100%;text-align:center;}.vertical.outer-therm{position:relative;}.vertical.inner-therm{position:absolute;bottom:0;}</style>")
-      }, e.jQMeter.defaults = {
-         width: "100%",
-         height: "50px",
-         bgColor: "#444",
-         barColor: "#bfd255",
-         meterOrientation: "horizontal",
-         animationSpeed: 2e3,
-         counterSpeed: 2e3,
-         displayTotal: !0
-      }
-   }(jQuery);
-
-})
