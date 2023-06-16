@@ -45,39 +45,7 @@ window.addEventListener('load', function () {
       );
    }
 
-   $(".cliqueaqui,.cardofertafinal a").on('click tap', function (evt) {
-      evt.preventDefault();
-      x = $(this).attr("href");
-      $("body").prepend('<div style="display:none" class="cupomcardpopup" id="demo"></div>');
-      $('html, body').css({
-         overflow: 'hidden',
-      });
-      $(".container").fadeTo(1000, 0.32);
-      $("#demo").fadeIn(1000);
-      $('#demo').jQMeter({
-         goal: '$10,000',
-         raised: '$10,000',
-         width: '300px',
-         counterSpeed: 5000,
-         animationSpeed: 5000,
-         barColor: "#bc0406",
-      });
-      setTimeout(function (e) {
-         window.location = x;
-      }, 6000);
-   });
 
-
-   
-         e(".cidade").html(tratado),
-            e(".todaydate").html(dataarrumada),
-            e("#autoradv").html("Por G3 " + b),
-            e(".estadosigla").html(b),
-            e(".cidaderegiao1").html(o),
-            e(".cidaderegiao").html(o + " e região"),
-            e(".shipping-estimated").html("Receba seu pedido entre os dias " + a + ".");
-      });
-   });
 
 
    $(".icon-thumbs-up").on("click", function () {
