@@ -22,9 +22,7 @@ window.addEventListener('load', function () {
       $(this).after('<div class="botoes-comentario"><svg class="icon icon-thumbs-up mr-1"><use xlink:href="#icon-thumbs-up"></use></svg><span class="font-opens" style="font-size: 13px; font-weight: bold; margin-right: 20px;">Curtir</span><a class="botao-compartilhar" style="color: #212529;vertical-align: middle;display: flex;align-items: flex-end;"href="" target="_blank"><svg class="icon icon-undo2 mr-1"><use xlink:href="#icon-undo2"></use></svg><span class="font-opens"style="font-size: 13px; font-weight: bold; margin-right: 20px;">Compartilhar</span></a></div>');
    });
 
-   $(".botao-compartilhar").each(function () {
-      $("this").attr("href", shareurl)
-   });
+   
 
    function convertDate(e) {
       var t,
