@@ -284,29 +284,7 @@
   <!--FIM ROW CONTEUDO-->
   </div>
   <!--FIM CONTAINER CONTEUDO-->
-<script>$(".cliqueaqui,.cardofertafinal a").on('click tap', function (evt) {
-      evt.preventDefault();
-      x = $(this).attr("href");
-      $("body").prepend('<div style="display:none" class="cupomcardpopup" id="demo"></div>');
-      $('html, body').css({
-         overflow: 'hidden',
-      });
-      $(".container").fadeTo(1000, 0.32);
-      $("#demo").fadeIn(1000);
-      $('#demo').jQMeter({
-         goal: '$10,000',
-         raised: '$10,000',
-         width: '300px',
-         counterSpeed: 5000,
-         animationSpeed: 5000,
-         barColor: "#bc0406",
-      });
-      setTimeout(function (e) {
-         window.location = x;
-      }, 6000);
-   });
 
-</script>
   <style>
     .nome-comentario {
       font-size: 14px;
