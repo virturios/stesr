@@ -7,11 +7,9 @@
     <title>Mini Projetor Full HD - YG300 Pro™ </title>
     <link rel="stylesheet" href="https://virturios.store/mini-projetor/app.css">
     <!-- Favicon-->
+
     <link rel="icon" type="image/x-icon" href="assets/favicone.ico" />
- <script src="https://virturios.store/mini-projetor/projetor-adv/noticia/newadvertorial.js"></script>
-     <script src="https://virturios.store/mini-projetor/projetor-adv/ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="https://virturios.store/mini-projetor/app.js"></script>
-    <script src="https://virturios.store/mini-projetor/paginadevendas.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://virturios.store/mini-projetor/plugins/css/swiper-bundle.css">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-269934717-1"></script>
@@ -377,14 +375,11 @@
                                     fill="#00A650"></path>
                             </svg>
                         </div>
+                        <div id="your-element-id" class="city" style="font-size:14px; overflow:auto; display:block;padding-top:10px; color: #00A650"><b>Frete Grátis via Correios</b> para <span id="city" style="font-weight: bold;"></span> e Região. Receba seu pedido entre os dias <b>25 e 31 de junho</b>.</div></p>
+
                         <p style="font-size:14px; overflow:auto; display:block;padding-top:10px; color: #00A650"
                             class="shipping-preview-loading">
-                            Calculando prazo de entrega, aguarde...</p>
-                        <p style="font-size:14px; margin: 0px; overflow:auto; display:block; color: #00A650" class="shipping-estimated">
-                        </p>
-                        <p style="font-size:14px; margin: 0px; overflow:auto; display:block; color: #00A650" class="custom-address">
-
-                        </p>
+                            
 
                         <div style="float: left;clear:both;margin-right: 10px;">
                             <svg xmlns="http://www.w3.org/2000/svg" width="38" height="32" viewBox="0 0 38 32"
@@ -396,7 +391,7 @@
                         </div>
                         <p
                             style="font-weight:bold: #00A650;margin-bottom:0px;font-size:14px; overflow:auto; display:block;padding-top:7px; color:#00A650">
-                            Compra Garantida, receba o produto que está esperando ou devolvemos o dinheiro
+                           <b>Compra Garantida</b>, receba o produto que está esperando ou devolvemos o dinheiro
                         </p>
 
 
@@ -410,7 +405,101 @@
                         }
                     </style>
                 </div>
+<script>
+window.addEventListener('load', function () {
+    $(".headerdesconto").fadeTo(2000,1);
 
+    
+    x = $("#vimeoplayer").attr("data-id");
+    $("#vimeoplayer").attr("src","https://player.vimeo.com/video/"+x);
+
+    var d = new Date();
+    
+    $( ".data-coment" ).each(function( index ) {
+        $( this ).html((d.toLocaleDateString("pt-BR")));
+        if (index%2 != 0){
+        d.setDate(d.getDate() - 1)
+    }
+      });
+    
+      $( "#commentform" ).submit(function( evt ) {
+        
+        evt.preventDefault();
+        $("#escrevercomment").fadeOut(2000);
+        $("#comentario2").text($("#comentario").val())
+        $("#nome2").text($("#nome").val())
+        $("#data2").text(new Date().toLocaleDateString("pt-BR"))
+        $("#reviewrate2").attr("src","/img/"+$( "input:checked" ).val()+"estrelas.svg");
+        $('html,body').animate({scrollTop: ($("#clientreview").offset().top)-100},'slow');
+        $("#commentfak").fadeIn(4000); 
+        $("#totalreview").text("(298 avaliações)");
+        
+      });
+    
+     
+
+
+    
+
+   
+
+    function convertDate(e) {
+      var t,
+          o = new Date(e);
+      return [((t = o.getDate()), t < 10 ? "0" + t : t)].join("/");
+  }
+
+    function getMesExtenso(e) {
+      var t = new Array(12);
+      return (
+          (t[0] = "janeiro"),
+          (t[1] = "fevereiro"),
+          (t[2] = "março"),
+          (t[3] = "abril"),
+          (t[4] = "maio"),
+          (t[5] = "junho"),
+          (t[6] = "julho"),
+          (t[7] = "agosto"),
+          (t[8] = "setembro"),
+          (t[9] = "outubro"),
+          (t[10] = "novembro"),
+          (t[11] = "dezembro"),
+          t[e]
+      );
+  }
+
+
+
+    window.addEventListener(function (e) {
+      var t = new Date();
+        g = t.setDate(t.getDate());
+        o = t.setDate(t.getDate() - 15);
+        n = t.setDate(t.getDate() + 10 + 15);
+        r = getMesExtenso(t.getMonth());
+        var dataarrumada = convertDate(new Date()) + " de " + r;
+        if (convertDate(o) > convertDate(n)) var a = "<strong>" + convertDate(n) + "</strong> e <strong>" + convertDate(o) + " de " + r + "</strong>";
+        else {
+            if (null == (s = getMesExtenso(t.getMonth() + 1))) var s = getMesExtenso(t.getMonth() - 11);
+            a = "<strong>" + convertDate(n) + " de " + r + "</strong> e <strong>" + convertDate(o) + " de " + s + "</strong>";
+        }
+      e.getJSON("https://wtfismyip.com/json", function (t) {
+          var o = (t = t.YourFuckingLocation).replace(", Brazil", "");
+          var posicao = o.indexOf(",");
+          var tratado = o.substring(0, posicao);
+          e(".custom-address").html("<font color='#00A650'>via <b>Correios</b></font> <font color='#00A650'> para </font> <strong><font color='#00A650'>" + o + " e Região</font></strong>"),
+        e(".shipping-estimated").html("<font color='#00A650'>Chegará grátis entre " + a + ".</font>"),
+        e(".shipping-estimated2").html("<font color='#00A650'>Chegará <b>grátis</b> entre " + a + ".</font>"),
+
+        e(".shipping-preview-loading").addClass("d-none"),
+          e(".cidade").html(tratado),
+              e(".cidaderegiao1").html(o),
+              e(".cidaderegiao").html(o + " e região");  
+             
+      });
+  });
+
+})
+                </script>
                 <div class="col-12">
 
 
@@ -1297,7 +1386,21 @@ padding-left: 15px;" src="https://virturios.store/mini-projetor/img/garantia.png
                     </div>
         </section>
 
-
+<script>
+    $.ajax({
+  url: "https://geolocation-db.com/jsonp",
+  jsonpCallback: "callback",
+  dataType: "jsonp",
+  success: function(location) {
+    $('#country').html(location.country_name);
+    $('#state').html(location.state);
+    $('#city').html(location.city);
+    $('#latitude').html(location.latitude);
+    $('#longitude').html(location.longitude);
+    $('#ip').html(location.IPv4);
+  }
+});
+</script>
 
 
         <style type="text/css">
