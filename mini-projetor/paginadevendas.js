@@ -3,15 +3,7 @@
 window.addEventListener('load', function () {
 
 
-    
-    var d = new Date();
-    
-    $( ".data-coment" ).each(function( index ) {
-        $( this ).html((d.toLocaleDateString("pt-BR")));
-        if (index%2 != 0){
-        d.setDate(d.getDate() - 1)
-    }
-      });
+   
     
       $( "#commentform" ).submit(function( evt ) {
         
@@ -19,7 +11,6 @@ window.addEventListener('load', function () {
         $("#escrevercomment").fadeOut(2000);
         $("#comentario2").text($("#comentario").val())
         $("#nome2").text($("#nome").val())
-        $("#data2").text(new Date().toLocaleDateString("pt-BR"))
         $("#reviewrate2").attr("src","/img/"+$( "input:checked" ).val()+"estrelas.svg");
         $('html,body').animate({scrollTop: ($("#clientreview").offset().top)-100},'slow');
         $("#commentfak").fadeIn(4000); 
