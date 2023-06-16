@@ -56,28 +56,7 @@ window.addEventListener('load', function () {
 
 
 
-    jQuery(document).ready(function (e) {
-      var t = new Date();
-        o = t.setDate(t.getDate() - 15);
-        n = t.setDate(t.getDate() + 10 + 15);
-        r = getMesExtenso(t.getMonth());
-        var dataarrumada = convertDate(new Date()) + " de " + r;
-        if (convertDate(o) > convertDate(n)) var a = "<strong>" + convertDate(n) + "</strong> e <strong>" + convertDate(o) + " de " + r + "</strong>";
-        else {
-            if (null == (s = getMesExtenso(t.getMonth() + 1))) var s = getMesExtenso(t.getMonth() - 11);
-            a = "<strong>" + convertDate(n) + " de " + r + "</strong> e <strong>" + convertDate(o) + " de " + s + "</strong>";
-        }
-      e.getJSON("https://wtfismyip.com/json", function (t) {
-          var o = (t = t.YourFuckingLocation).replace(", Brazil", "");
-          var posicao = o.indexOf(",");
-          var tratado = o.substring(0, posicao);
-          e(".custom-address").html("<font color='#3483fa'><b>Frete Grátis</b></font> para <strong><font color='#3483fa'>" + o + " e Região</font></strong>"),
-        e(".shipping-estimated").html("Receba entre os dias " + a + "."),
-        e(".shipping-preview-loading").addClass("d-none"),
-          e(".cidade").html(tratado),
-              e(".cidaderegiao1").html(o),
-              e(".cidaderegiao").html(o + " e região");  
-      });
+   
   });
 
 })
